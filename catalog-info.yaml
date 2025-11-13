@@ -1,0 +1,38 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "agent013"
+  description: This is Agent Deploymnt
+  annotations:
+    backstage.io/kubernetes-label-selector: 'entity-id=agent013'
+    argocd/app-selector: 'entity-id=agent013'
+    backstage.io/kubernetes-cluster: workshop
+    argo-workflows.cnoe.io/cluster-name: local
+    argo-workflows.cnoe.io/namespace: agent013
+    argo-workflows.cnoe.io/label-selector: 'entity-id=agent013'
+    backstage.io/techdocs-ref: dir:.
+  links:
+    - url: https://github.com/cnoe-idp-demo/agent013
+      title: App Repo URL
+      icon: github
+spec:
+  owner: guests
+  lifecycle: experimental
+  type: agent
+  system: "agent013"
+  providesApis: ['api:agent013']
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: "agent013"
+  description: An example system for demonstration purposes
+  links:
+    - url: https://github.com/cnoe-idp-demo/agent013
+      title: App Repo URL
+      icon: github
+spec:
+  owner: guests
+  lifecycle: experimental
+  type: agent
